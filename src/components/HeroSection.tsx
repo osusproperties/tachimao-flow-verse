@@ -4,7 +4,7 @@ import Interactive3DScene from "./Interactive3DScene";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen relative flex items-center justify-center overflow-hidden">
+    <section className="min-h-screen relative flex items-center justify-center overflow-hidden pt-16">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
       <div 
