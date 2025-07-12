@@ -1,5 +1,6 @@
 import { ArrowDown, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Interactive3DScene from "./Interactive3DScene";
 
 const HeroSection = () => {
   return (
@@ -43,6 +44,11 @@ const HeroSection = () => {
           that drive real results.
         </p>
         
+        {/* Interactive 3D Scene */}
+        <div className="my-12">
+          <Interactive3DScene />
+        </div>
+
         {/* CTA Button */}
         <Button 
           size="lg" 
