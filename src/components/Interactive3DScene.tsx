@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, OrbitControls, Environment } from '@react-three/drei';
+import { Float, OrbitControls, Environment, Line } from '@react-three/drei';
 import { useRef, useState } from 'react';
 import * as THREE from 'three';
 
@@ -55,20 +55,16 @@ const DataNode = ({ position }: { position: [number, number, number] }) => {
 };
 
 const NetworkConnection = ({ start, end }: { start: [number, number, number]; end: [number, number, number] }) => {
-  const points = [new THREE.Vector3(...start), new THREE.Vector3(...end)];
+  const points = [start, end];
   
   return (
-    <line>
-      <bufferGeometry>
-        <bufferAttribute 
-          attach="attributes-position" 
-          count={points.length} 
-          array={new Float32Array(points.flatMap(p => [p.x, p.y, p.z]))} 
-          itemSize={3} 
-        />
-      </bufferGeometry>
-      <lineBasicMaterial color="hsl(213, 100%, 60%)" transparent opacity={0.3} />
-    </line>
+    <Line
+      points={points}
+      color="hsl(213, 100%, 60%)"
+      transparent
+      opacity={0.3}
+      lineWidth={2}
+    />
   );
 };
 
